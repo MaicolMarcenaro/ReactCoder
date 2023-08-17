@@ -2,9 +2,49 @@
     padding: 10px;
     margin: 10px;
     background-color: #0B666A;
-    width: 400px;
-    height: 450px;
+    width: 95%;
+    text-align: center;
 }
 .img{
     width: 100% ;
+    max-height: 300px;
+}
+@media (min-width: 460px) {
+    .img{
+        max-height: 350px;
+    }
+}
+@media (min-width: 780px) {
+    .img{
+        width: auto;
+        height: auto;
+    }
+}
+.itemCon p, span, h2{
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+button{
+    border-radius: 50%;
+    border: 0 solid white;
+    background-color: white;
+}
+.btn-carrito{
+    margin: 5px;
+    border-radius: 3%;
+    border: 0 solid white;
+    background-color: white;
+}
+.contador{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.contador p{
+    margin: 0;
+}
+.con{
+    text-align: center;
 }

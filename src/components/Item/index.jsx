@@ -1,11 +1,19 @@
 import React from 'react'
+import Contador from '../Contador'
 import './index.css'
 
-export const Item = () => {
+export const Item = ({info}) => {
+
+    const onAdd = (quantity) => {
+        alert(`Compraste ${quantity} unidades de ${info.nombre}`)
+    }
+
     return (
         <a href="#" className='itemCon nav-link'>
-            <img className='img' src="https://i.pinimg.com/564x/16/82/40/168240b4a74b4ffb28f179acd7daeca4.jpg" alt="Laptop" />
-            <p>Precio: $500</p>
+            <h2>{info.nombre}</h2>
+            <img className='img' src={info.img} alt="Laptop" />
+            <p>Precio: {info.precio}</p>
+            <Contador onAdd={onAdd}/>
         </a>
     )
 }
