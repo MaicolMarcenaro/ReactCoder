@@ -17,7 +17,7 @@ const Contador = ({onAdd}) =>{
                 <span> {cont} </span>
                 <button onClick={inc}> + </button>
             </div>
-            <button disabled={cont<1} onClick={()=>onAdd(cont)} className="btn-carrito">Agregar al carrito</button>
+             <button disabled={cont<1} /*onClick={()=>onAdd(cont)} */ className="btn-carrito">Agregar al carrito</button>
         </div>
     )
 }

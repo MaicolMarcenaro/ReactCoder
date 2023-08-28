@@ -1,11 +1,70 @@
-@media (min-width: 460px) {
-    .productos{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
+.card {
+ --background: linear-gradient(to left, #55583a 0%, #4a4e26 100%);
+ width: 400px;
+ height: 600px;
+ padding: 5px;
+ border-radius: 1rem;
+ overflow: visible;
+ background: #f7ba2b;
+ background: var(--background);
+ position: relative;
+ z-index: 1;
+ margin: 10px;
+ text-decoration: none;
 }
-@media (min-width: 1000px) {
-    .productos{
-        grid-template-columns: repeat(3, 1fr);
-    }
+
+.card::after {
+ position: absolute;
+ content: "";
+ top: 30px;
+ left: 0;
+ right: 0;
+ z-index: -1;
+ height: 100%;
+ width: 100%;
+ transform: scale(0.8);
+ filter: blur(25px);
+ background: #f7ba2b;
+ background: var(--background);
+ transition: opacity .5s;
+}
+
+.card-info {
+ --color: #BABF93;
+ background: var(--color);
+ color: black;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+ height: 100%;
+ overflow: visible;
+ border-radius: .7rem;
+ flex-direction: column;
+ 
+}
+
+.card .title {
+    color: black;
+ font-weight: bold;
+ letter-spacing: .1em;
+}
+
+
+
+
+.img-catalogo{
+    width: 350px;
+    height: 300px;
+    object-fit: fill;
+}
+
+.vermas{
+    color: white;
+    text-decoration: none;
+    background-color: #55583a;
+    border-radius: 15%  15%;
+    border: 2px solid black;
+    padding: 5px;
+    margin: 5px;
 }

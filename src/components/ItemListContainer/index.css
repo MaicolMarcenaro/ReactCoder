@@ -1,6 +1,22 @@
 .titulo{
-    color: #071952;
+    color: #21221f;
     font-weight: bold;
     text-align: center;
     margin: 5px;
+}
+.conItemList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+@media (min-width: 1000px) {
+    .conProductos{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
 }
