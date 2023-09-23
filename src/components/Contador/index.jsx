@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { CartContext } from "../../Context/CartContext";
 
-const Contador = ({onAdd}) =>{
+const Contador = ({item}) =>{
+    const {addCarro}= useContext(CartContext)
     const [cont, setContador] = useState(0)
-
     const des = ()=>{
         setContador(cont - 1)
     }
@@ -17,7 +18,8 @@ const Contador = ({onAdd}) =>{
                 <span> {cont} </span>
                 <button onClick={inc}> + </button>
             </div>
-             <button disabled={cont<1} /*onClick={()=>onAdd(cont)} */ className="btn-carrito">Agregar al carrito</button>
+            <button disabled={cont<1} onClick={()=>addCarro(item , cont)} className="btn-carrito">Agregar al carrito</button>
+            
         </div>
     )
 }

@@ -1,0 +1,12 @@
+.lista{
+    text-align: center;
+}
+.compraOk{
+    padding: 100px;
+    max-width: 600px;
+    margin: 100px auto;
+    background-color: rgba(0, 177, 0, 0.644);
+    color: black;
+    text-align: center;
+
+}

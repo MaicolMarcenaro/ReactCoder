@@ -2,9 +2,12 @@ import React from 'react'
 import './index.css'
 import CartWidget from '../CartWidget'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../Context/CartContext'
 
 
 export const NavBar = () =>{
+    const {totalProducts} = useContext(CartContext)
     return(
         <nav className="navbar navbar-expand-lg bg-pri">
             <div className="container-fluid">
@@ -20,23 +23,23 @@ export const NavBar = () =>{
                         <Link className="nav-link" to='/'>Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to='category/electronics'>electronics</Link>
+                        <Link className="nav-link" to='category/Camisas'>Camisas</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to='category/jewelery'>jewelery</Link>
+                        <Link className="nav-link" to='category/Pantalones'>Pantalones</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="category/men's clothing">men's clothing</Link>
+                        <Link className="nav-link" to="category/Zapatos">Zapatos</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="category/women's clothing">women's clothing</Link>
+                        <Link className="nav-link" to="category/Lentes">Lentes</Link>
                     </li>
                 </ul>
                 <form className="d-flex"  >
-                    <a className="nav-link d-flex" href="#">
+                    <Link className="nav-link d-flex" to='cart'>
                         <CartWidget />
-                        <p>1</p>
-                    </a>
+                        <p>{totalProducts()}</p>
+                    </Link>
                 </form>
                 </div>
             </div>

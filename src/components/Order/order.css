@@ -1,0 +1,20 @@
+.lista{
+    text-align: center;
+}
+.FormUsu{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    gap: 10px;
+}
+
+.UsuP{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}

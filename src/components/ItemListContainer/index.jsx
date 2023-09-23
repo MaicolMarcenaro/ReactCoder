@@ -1,32 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import './index.css'
 import ListItem from '../ListItem'
 import { useParams } from 'react-router-dom'
-
+import { PrdContext } from '../../Context/ProductContext'
 
 
 export const ItemListContainer = ({greeting}) => {
+    const datos= useContext(PrdContext)
     const [productos, setProductos] = useState([])
     const {id} = useParams()
-
     useEffect(()=>{
-        fetch('https://fakestoreapi.com/products')
-        .then((res) => res.json())
-        .then((json) => {
-        const productosFiltrados = json.filter((producto) => producto.category === id);
-        productosFiltrados.length> 0 ? setProductos(productosFiltrados): setProductos(json)
-      });
-    }, [id]);
-   
-    return(
-
+        const productosFiltrados = datos.filter(producto => producto.categoryId === id);
         
-        <div className='conItemList'>
-            <h1 className='titulo'>{greeting}</h1>
-            <div className='conProductos'>
-                {productos.map(producto=> <ListItem key={producto.id} data={producto} />)}
-            </div>
+        productosFiltrados.length> 0 ? setProductos(productosFiltrados): setProductos(datos)
+    }, [datos,id]);
+    return( 
+        <div>
+            { productos.length===0 ? <span className='loader'></span> : 
+            <div className='conItemList'>
+                <h1 className='titulo'>{greeting}</h1>
+                <div className='conProductos'>
+                    {productos.map(producto=> <ListItem key={producto.id} data={producto} />)}
+                </div>
+            </div>}
         </div>
+        
     )
 }
 export default ItemListContainer
