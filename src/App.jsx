@@ -1,5 +1,5 @@
 import './App.css';
-import { CarritoContext } from './Context/CartContext';
+import { CartProvider } from './Context/CartContext';
 import {ProductContext} from './Context/ProductContext';
 import CartView from './components/CartView';
 import ItemDetailsContainer from './components/ItemDetailContainer';
@@ -11,7 +11,7 @@ import Order from './components/Order';
 function App() {
   return (
     <>
-    <CarritoContext>
+    <CartProvider>
     <ProductContext>
       <BrowserRouter>
         <NavBar/>
@@ -24,7 +24,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </ProductContext>
-    </CarritoContext>
+    </CartProvider>
     </>
   );
 }

@@ -11,15 +11,6 @@ const Data = () => {
         const dataFiltrada = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
     }
 
-    //const productRef= doc(db, "items","LdfyBuQglVtfHtDpWeLO" )
-
-    //const getItems= ()=>{
-    //    getDoc(productRef).then((snapshot => {
-    //        if (snapshot.exists()){
-    //            console.log({id: snapshot.id, ...snapshot.data()})
-    //        }
-    //    }))
-    //}
 
 
     useEffect(()=>{

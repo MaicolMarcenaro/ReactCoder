@@ -10,3 +10,10 @@
     text-align: center;
 
 }
+.alert{
+    background-color: rgba(0, 177, 0, 0.644);
+    padding: 100px;
+    max-width: 700px;
+    margin: 0 auto;
+    z-index: 999;
+}
