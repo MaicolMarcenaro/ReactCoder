@@ -7,7 +7,7 @@ import CartItem from '../CartItem'
 
 const OrderItem = ({name, phone, email}) => {
     const {carro, totalPrice} = useContext(CartContext)
-    const [id, setId] = useState('')
+    const [id, setId] = useState(' ')
     const buyer={name, phone, email}
     const order={
         buyer : buyer,
@@ -15,14 +15,14 @@ const OrderItem = ({name, phone, email}) => {
         total: totalPrice()
     }
     const createOrder=()=>{
-        
+        setId('')
         const db = getFirestore()
         const ordersCollection = collection(db, "orders")
         addDoc(ordersCollection, order).then(({id}) => setId({id}))
     }
   return (
     <div className='lista'>
-        {id !=='' ? <div className='alert'>Compra completada con exito. Su id de compra es: {id.id} </div>  : <></>}
+        
         <h1>Confirmar compra</h1>
         <div className='center'>
             <p>Nombre: {order.buyer.name}</p>
@@ -34,6 +34,8 @@ const OrderItem = ({name, phone, email}) => {
             <p >Total: {totalPrice()}</p>
             <button  onClick={()=>createOrder()}>Confirmar Compra</button>
         </div>
+        {id ==='' ?  <span className='loader'></span > : <></>}
+        {id !=='' && id !==' ' ? <div className='alert'>Compra completada con exito. Su id de compra es: {id.id} </div> : <></>}
     </div>
   )
 }
